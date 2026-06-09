@@ -1,0 +1,9 @@
+.rge-text-reveal {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.rge-char {
+  display: inline-block;
+  will-change: transform, opacity;
+}
