@@ -1,6 +1,6 @@
 {
   "name": "react-gsap-effects",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "type": "module",
   "description": "TypeScript-first React animation library featuring reusable GSAP-powered effects.",
   "main": "./dist/index.cjs.js",
@@ -38,11 +38,11 @@
     "animation",
     "react-animation",
     "typescript",
-    "text-reveal",
-    "frontend",
     "ui",
     "effects",
-    "react-effects"
+    "motion",
+    "react-components",
+    "frontend"
   ],
   "sideEffects": [
     "*.css"
@@ -62,5 +62,8 @@
     "gsap": "^3.15.0",
     "typescript": "^6.0.3",
     "vite": "^8.0.16"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
