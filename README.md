@@ -1,6 +1,11 @@
 # react-gsap-effects
 
+[![npm version](https://img.shields.io/npm/v/react-gsap-effects)](https://www.npmjs.com/package/react-gsap-effects)
+[![npm downloads](https://img.shields.io/npm/dm/react-gsap-effects)](https://www.npmjs.com/package/react-gsap-effects)
+[![License](https://img.shields.io/npm/l/react-gsap-effects)](LICENSE)
+
 TypeScript-first React animation library featuring reusable GSAP-powered effects.
+
 
 Build beautiful, production-ready animations in React using simple, reusable components powered by GSAP.
 
