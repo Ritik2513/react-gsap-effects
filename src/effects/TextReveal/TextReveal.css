@@ -1,6 +1,7 @@
 .rge-text-reveal {
   display: inline-block;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 .rge-char {

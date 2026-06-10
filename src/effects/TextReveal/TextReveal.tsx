@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import type { TextRevealProps } from "./TextReveal.types";
-import "./TextReveal.css";
 
 export const TextReveal: React.FC<TextRevealProps> = ({
   text,

@@ -1,34 +1,66 @@
 {
   "name": "react-gsap-effects",
   "version": "1.0.0",
+  "type": "module",
   "description": "TypeScript-first React animation library featuring reusable GSAP-powered effects.",
-  "main": "index.js",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "@gsap/react": ">=2",
+    "gsap": ">=3",
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js"
+    },
+    "./styles": "./dist/react-gsap-effects.css"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "vite build && dts-bundle-generator --out-file dist/index.d.ts src/index.types.ts --external-types gsap --external-types @gsap/react",
+    "dev": "vite",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Ritik2513/react-gsap-effects.git"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "gsap",
+    "animation",
+    "react-animation",
+    "typescript",
+    "text-reveal",
+    "frontend",
+    "ui",
+    "effects",
+    "react-effects"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
   "author": "Ritik Kumar Gupta",
   "license": "MIT",
-  "type": "module",
   "bugs": {
     "url": "https://github.com/Ritik2513/react-gsap-effects/issues"
   },
   "homepage": "https://github.com/Ritik2513/react-gsap-effects#readme",
   "devDependencies": {
+    "@gsap/react": "^2.1.2",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.2",
+    "dts-bundle-generator": "^9.5.1",
+    "gsap": "^3.15.0",
     "typescript": "^6.0.3",
     "vite": "^8.0.16"
-  },
-  "dependencies": {
-    "@gsap/react": "^2.1.2",
-    "gsap": "^3.15.0",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7"
   }
 }

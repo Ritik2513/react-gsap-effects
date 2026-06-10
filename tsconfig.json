@@ -1,16 +1,16 @@
 {
   "compilerOptions": {
     "target": "ES2020",
+    "lib": ["ES2020", "DOM"],
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "jsx": "react-jsx",
     "strict": true,
-    "declaration": true,
-    "declarationMap": true,
-    "outDir": "dist",
     "skipLibCheck": true,
     "isolatedModules": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "noEmit": true,
+    "rootDir": "src"
   },
-  "include": ["src"]
+  "include": ["src"] // ← remove "global.d.ts" from here, it's now inside src/
 }
