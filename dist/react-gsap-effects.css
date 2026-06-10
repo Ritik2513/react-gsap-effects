@@ -1,2 +1,2 @@
-.rge-text-reveal{display:inline-block;overflow:hidden}.rge-char{will-change:transform, opacity;display:inline-block}
+.rge-text-reveal{white-space:nowrap;display:inline-block;overflow:hidden}.rge-char{will-change:transform, opacity;display:inline-block}
 /*$vite$:1*/
