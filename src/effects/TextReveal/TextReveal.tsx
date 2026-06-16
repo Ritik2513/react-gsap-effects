@@ -12,16 +12,17 @@ export const TextReveal: React.FC<TextRevealProps> = ({
 }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
-  const chars = text.split("");
+  // split by words first
+  const words = text.split(" ");
 
   useGSAP(
     () => {
       if (!containerRef.current) return;
 
-      const elements = containerRef.current.querySelectorAll(".rge-char");
+      const chars = containerRef.current.querySelectorAll(".rge-char");
 
       gsap.fromTo(
-        elements,
+        chars,
         {
           opacity: 0,
           y: 30,
@@ -33,10 +34,10 @@ export const TextReveal: React.FC<TextRevealProps> = ({
           delay,
           stagger,
           ease: "power3.out",
-        },
+        }
       );
     },
-    { scope: containerRef },
+    { scope: containerRef }
   );
 
   return (
@@ -45,9 +46,20 @@ export const TextReveal: React.FC<TextRevealProps> = ({
       className={`rge-text-reveal ${className}`}
       aria-label={text}
     >
-      {chars.map((char, i) => (
-        <span key={i} className="rge-char">
-          {char === " " ? "\u00A0" : char}
+      {words.map((word, wordIndex) => (
+        <span key={wordIndex} className="rge-word">
+
+          {word.split("").map((char, charIndex) => (
+            <span key={charIndex} className="rge-char">
+              {char}
+            </span>
+          ))}
+
+          {/* preserve space between words */}
+          {wordIndex !== words.length - 1 && (
+            <span className="rge-space"> </span>
+          )}
+
         </span>
       ))}
     </div>

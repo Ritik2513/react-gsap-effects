@@ -1,33 +1,39 @@
 import { useRef as e } from "react";
 import t from "gsap";
 import { useGSAP as n } from "@gsap/react";
-import { jsx as r } from "react/jsx-runtime";
+import { jsx as r, jsxs as i } from "react/jsx-runtime";
 //#region src/effects/TextReveal/TextReveal.tsx
-var i = ({ text: i, duration: a = 1, delay: o = 0, stagger: s = .05, className: c = "" }) => {
-	let l = e(null), u = i.split("");
+var a = ({ text: a, duration: o = 1, delay: s = 0, stagger: c = .05, className: l = "" }) => {
+	let u = e(null), d = a.split(" ");
 	return n(() => {
-		if (!l.current) return;
-		let e = l.current.querySelectorAll(".rge-char");
+		if (!u.current) return;
+		let e = u.current.querySelectorAll(".rge-char");
 		t.fromTo(e, {
 			opacity: 0,
 			y: 30
 		}, {
 			opacity: 1,
 			y: 0,
-			duration: a,
-			delay: o,
-			stagger: s,
+			duration: o,
+			delay: s,
+			stagger: c,
 			ease: "power3.out"
 		});
-	}, { scope: l }), /* @__PURE__ */ r("div", {
-		ref: l,
-		className: `rge-text-reveal ${c}`,
-		"aria-label": i,
-		children: u.map((e, t) => /* @__PURE__ */ r("span", {
-			className: "rge-char",
-			children: e === " " ? "\xA0" : e
+	}, { scope: u }), /* @__PURE__ */ r("div", {
+		ref: u,
+		className: `rge-text-reveal ${l}`,
+		"aria-label": a,
+		children: d.map((e, t) => /* @__PURE__ */ i("span", {
+			className: "rge-word",
+			children: [e.split("").map((e, t) => /* @__PURE__ */ r("span", {
+				className: "rge-char",
+				children: e
+			}, t)), t !== d.length - 1 && /* @__PURE__ */ r("span", {
+				className: "rge-space",
+				children: " "
+			})]
 		}, t))
 	});
 };
 //#endregion
-export { i as TextReveal };
+export { a as TextReveal };

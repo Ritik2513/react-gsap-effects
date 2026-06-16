@@ -1,10 +1,16 @@
 .rge-text-reveal {
-  display: inline-block;
   overflow: hidden;
-  white-space: nowrap;
+}
+
+.rge-word {
+  display: inline-block;
 }
 
 .rge-char {
   display: inline-block;
   will-change: transform, opacity;
+}
+
+.rge-space {
+  white-space: pre;
 }
