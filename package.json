@@ -1,6 +1,6 @@
 {
   "name": "react-gsap-effects",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "type": "module",
   "description": "TypeScript-first React animation library featuring reusable GSAP-powered effects.",
   "main": "./dist/index.cjs.js",
