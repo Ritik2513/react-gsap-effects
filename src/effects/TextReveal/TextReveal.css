@@ -1,5 +1,7 @@
 .rge-text-reveal {
   overflow: hidden;
+  display: inline-flex;
+  align-items: baseline;
 }
 
 .rge-word {

@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 export interface TextRevealProps {
-  text: string;
+  children: ReactNode;
   duration?: number;
   delay?: number;
   stagger?: number;
